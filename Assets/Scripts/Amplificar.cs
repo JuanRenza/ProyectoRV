@@ -6,15 +6,16 @@ public class Amplificar : MonoBehaviour
 {
 
     public AudioSource Audio;
-    private float tasa, audioInicial;
+    private float tasa1, tasa2, audioInicial;
     public bool Empezar;
 
     // Start is called before the first frame update
     void Start()
     {
         audioInicial = Audio.volume;
+        Audio.Play();
         Empezar = false;
-        tasa = 0.001f;
+        tasa2 = 0.1f;
     }
 
     // Update is called once per frame
@@ -24,7 +25,7 @@ public class Amplificar : MonoBehaviour
         {
             if(Audio.volume < 1.0f)
             {
-                Audio.volume += tasa;
+                Audio.volume = 0.99f;
             }
             
         }
@@ -32,7 +33,7 @@ public class Amplificar : MonoBehaviour
         {
             if(Audio.volume > audioInicial)
             {
-                Audio.volume -= tasa;
+                Audio.volume -= tasa2;
             }
         }
     }

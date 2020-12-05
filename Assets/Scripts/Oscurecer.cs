@@ -6,6 +6,7 @@ public class Oscurecer : MonoBehaviour
 {
 
     public Light luz;
+    public Light[] luces;
     private Light cambioLuz;
     private float tasa, luzInicial;
     public bool Empezar;
@@ -14,10 +15,9 @@ public class Oscurecer : MonoBehaviour
     void Start()
     {
         luzInicial = luz.intensity;
-        Debug.Log(luzInicial);
         cambioLuz = luz;
         Empezar = false;
-        tasa = 0.01f;
+        tasa = 0.03f;
     }
 
     // Update is called once per frame
@@ -29,7 +29,12 @@ public class Oscurecer : MonoBehaviour
             {
                 cambioLuz.intensity = cambioLuz.intensity - tasa;
                 luz.intensity = cambioLuz.intensity;
-                Debug.Log(cambioLuz.intensity);
+
+                for(int i = 0; i < luces.Length; i++)
+                {
+                    luces[i].intensity = cambioLuz.intensity;
+                }
+
             }
             
         }
@@ -39,6 +44,11 @@ public class Oscurecer : MonoBehaviour
             {
                 cambioLuz.intensity = cambioLuz.intensity + tasa;
                 luz.intensity = cambioLuz.intensity;
+
+                for(int i = 0; i < luces.Length; i++)
+                {
+                    luces[i].intensity = cambioLuz.intensity;
+                }
             }
         }
     }

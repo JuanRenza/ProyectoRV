@@ -13,7 +13,6 @@ public class Actuar : MonoBehaviour
     {
             if (other.tag == "Player")
             {
-              Debug.Log("Si");
               try{
                   o.Empezar = true;
               }catch{
@@ -30,7 +29,6 @@ public class Actuar : MonoBehaviour
     {
             if (other.tag == "Player")
             {
-              Debug.Log("No");
               try{
                   o.Empezar = false;
               }catch{

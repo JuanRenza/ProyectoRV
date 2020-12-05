@@ -15,7 +15,7 @@ public class Encojer : MonoBehaviour
         escalaObjeto = Objeto.transform.localScale;
         cambioEscala = Objeto.transform.localScale;
         Empezar = false;
-        tasa = 0.01f;
+        tasa = 0.0001f;
     }
 
     // Update is called once per frame
